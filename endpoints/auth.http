@@ -1,0 +1,60 @@
+@baseUrl = http://localhost:5000
+@urlPath = api/v1
+
+###
+POST {{baseUrl}}/{{urlPath}}/signup
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "username": "Qanny",
+  "password": "pwert2y",
+  "email": "poerty@gmail.com",
+  "avatarColor": "yellow",
+  "avatarImage":"https://plus.unsplash.com/premium_photo-1676068243733-df1880c2aef8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zmxvd2VyfGVufDB8fDB8fHww"
+}
+###
+POST {{baseUrl}}/{{urlPath}}/signin
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "username": "Qanny",
+  "password": "pwert2y"
+}
+
+###
+GET {{baseUrl}}/{{urlPath}}/signout
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+###
+GET {{baseUrl}}/{{urlPath}}/currentuser
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+###
+POST {{baseUrl}}/{{urlPath}}/forgot-password
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "email": "poerty@gmail.com"
+}
+
+// need to write the value of token in the next path
+###
+POST {{baseUrl}}/{{urlPath}}/reset-password/:token
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "password": "qwert12",
+  "confirmPassword": "qwert12"
+}
